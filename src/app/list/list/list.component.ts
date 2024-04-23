@@ -14,6 +14,7 @@ export class ListComponent implements OnInit, OnDestroy {
   readonly destroy$ = new Subject<void>();
   products: Product[] = [];
   columns: Column[] = Columns;
+  searchText = '';
 
   constructor(
     private readonly productService: ProductService

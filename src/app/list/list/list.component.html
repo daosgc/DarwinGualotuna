@@ -1,12 +1,13 @@
 <div class="list-component">
   <div class="list-component__actions">
+    <input type="text" [(ngModel)]="searchText" placeholder="Buscar...">
   </div>
   <div class="list-component_content">
     <table>
       <tr>
         <th *ngFor="let column of columns">{{column.label}}</th>
       </tr>
-      <tr *ngFor="let product of products">
+      <tr *ngFor="let product of products | lookup:searchText:'name'">
         <td>
           <img class="logo" [src]="product.logo" [alt]="product.name" width="50" height="60">
         </td>

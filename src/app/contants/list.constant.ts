@@ -6,4 +6,4 @@ export const Columns: Column[] = [
   { key: 'description', label: 'Descripción' },
   { key: 'date_release', label: 'Fecha de Liberación' },
   { key: 'date_revision', label: 'Fecha de Restructuración' }
-]
+];

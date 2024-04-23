@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ListComponent } from './list.component';
 import { ProductService } from 'src/app/services/product.service';
 import { of } from 'rxjs';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 describe('ListComponent', () => {
   let component: ListComponent;
@@ -14,6 +15,7 @@ describe('ListComponent', () => {
     });
     await TestBed.configureTestingModule({
       declarations: [ ListComponent ],
+      imports: [PipesModule],
       providers: [
         { provide: ProductService, useValue: productApiSpy}
       ]

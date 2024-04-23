@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { ListRoutingModule } from './list-routing.module';
 import { ListComponent } from './list/list.component';
+import { FormsModule } from '@angular/forms';
+import { PipesModule } from '../pipes/pipes.module';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { ListComponent } from './list/list.component';
   ],
   imports: [
     CommonModule,
-    ListRoutingModule
+    FormsModule,
+    ListRoutingModule,
+    PipesModule,
   ]
 })
 export class ListModule { }
