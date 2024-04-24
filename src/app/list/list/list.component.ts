@@ -15,6 +15,7 @@ export class ListComponent implements OnInit, OnDestroy {
   products: Product[] = [];
   columns: Column[] = Columns;
   searchText = '';
+  itemsPerPage = 5;
 
   constructor(
     private readonly productService: ProductService

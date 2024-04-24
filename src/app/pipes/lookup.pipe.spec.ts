@@ -11,7 +11,7 @@ describe('LookupPipe', () => {
   it('should filter products by name', () => {
     const products = mockProducts;
     const pipe = new LookupPipe();
-    expect(pipe.transform(products, 'prest', 'name')).toEqual([{
+    expect(pipe.transform(products, 'prest', 'name', 5)).toEqual([{
       id: '1002',
       name: 'Prestamo',
       description: 'Prestamo Credito',
