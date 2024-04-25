@@ -16,6 +16,9 @@
         <td>{{product.description}}</td>
         <td>{{product.date_release | date: 'dd/MM/yyyy'}}</td>
         <td>{{product.date_revision | date: 'dd/MM/yyyy'}}</td>
+        <td>
+          <app-dropdown [id]="product.id" (edit)="onEdit($event)"></app-dropdown>
+        </td>
       </tr>
     </table>
     <div class="list-component_content-footer">

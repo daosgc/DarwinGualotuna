@@ -1,7 +1,7 @@
 <div class="product">
   <div class="product_form">
     <div class="product_form-header">
-      <h2>Formulario de registro</h2>
+      <h2>Formulario de {{editMode ? 'actualización' : 'registro'}}</h2>
     </div>
     <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
       <div class="product_container-form">
@@ -54,7 +54,9 @@
       </div>
       <div class="product_actions">
         <button class="secondary_btn" (click)="resetForm($event)">Reiniciar</button>
-        <button class="principal_btn" [disabled]="productForm.invalid" [class.disabled]="productForm.invalid" type="submit">Enviar</button>
+        <button class="principal_btn" [disabled]="productForm.invalid" [class.disabled]="productForm.invalid" type="submit">
+          {{ editMode ? 'Actualizar': 'Enviar' }}
+        </button>
       </div>
     </form>
   </div>

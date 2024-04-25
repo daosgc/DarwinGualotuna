@@ -40,4 +40,8 @@ export class ListComponent implements OnInit, OnDestroy {
     this.router.navigate(['/product']);
   }
 
+  onEdit(id: number) {
+    this.router.navigate(['/product', id]);
+  }
+
 }
