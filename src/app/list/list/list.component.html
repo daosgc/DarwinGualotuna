@@ -1,0 +1,32 @@
+<div class="list-component">
+  <div class="list-component_actions">
+    <input type="text" [(ngModel)]="searchText" placeholder="Buscar...">
+    <button (click)="goToNewProduct()">Agregar</button>
+  </div>
+  <div class="list-component_content">
+    <table>
+      <tr>
+        <th *ngFor="let column of columns">{{column.label}}</th>
+      </tr>
+      <tr *ngFor="let product of products | lookup:searchText:'name':itemsPerPage">
+        <td>
+          <img class="logo" [src]="product.logo" [alt]="product.name" width="50" height="60">
+        </td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.date_release | date: 'dd/MM/yyyy'}}</td>
+        <td>{{product.date_revision | date: 'dd/MM/yyyy'}}</td>
+      </tr>
+    </table>
+    <div class="list-component_content-footer">
+      <div class="totalItems" *ngIf="products | lookup:searchText:'name':itemsPerPage as filteredProducts">
+        {{filteredProducts.length}} Resultados
+      </div>
+      <select [(ngModel)]="itemsPerPage">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+      </select>
+    </div>
+  </div>
+</div>

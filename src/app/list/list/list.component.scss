@@ -1,0 +1,48 @@
+.list-component {
+  background: #f4f6f9;
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, tr {
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f9fafc;
+    border-top: 1px solid #dddddd;
+    padding: 1rem 0;
+  }
+
+  &_actions {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      background: #f5df66;
+      border: none;
+      padding: 0 1rem;
+      height: 2rem;
+      color: #535851;
+      font-weight: bold;
+    }
+  }
+
+  &_content {
+    margin: 0 2rem 0 2rem;
+    background: white;
+    padding: 2rem;
+  }
+
+  &_content-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+  }
+}
