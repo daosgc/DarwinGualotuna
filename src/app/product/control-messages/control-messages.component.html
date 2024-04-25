@@ -1,0 +1,11 @@
+<label *ngIf="control.invalid && (control.dirty || control.touched)">
+  <div *ngIf="control.errors.required">
+    Campo requerido
+  </div>
+  <div *ngIf="control.errors.minlength">
+    Longitud mínima requerida: {{control.errors.minlength.requiredLength}}
+  </div>
+  <div *ngIf="control.errors.maxlength">
+    Longitud máxima requerida: {{control.errors.maxlength.requiredLength}}
+  </div>
+</label>

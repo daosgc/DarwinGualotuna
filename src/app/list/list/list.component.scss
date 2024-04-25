@@ -21,6 +21,17 @@
 
   &_actions {
     padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      background: #f5df66;
+      border: none;
+      padding: 0 1rem;
+      height: 2rem;
+      color: #535851;
+      font-weight: bold;
+    }
   }
 
   &_content {

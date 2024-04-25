@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { Columns } from 'src/app/contants/list.constant';
 import { Product } from 'src/app/interfaces/product.interface';
@@ -18,7 +19,8 @@ export class ListComponent implements OnInit, OnDestroy {
   itemsPerPage = 5;
 
   constructor(
-    private readonly productService: ProductService
+    private readonly productService: ProductService,
+    private readonly router: Router
   ) { }
 
   ngOnInit(): void {
@@ -32,6 +34,10 @@ export class ListComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  goToNewProduct() {
+    this.router.navigate(['/product']);
   }
 
 }

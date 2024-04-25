@@ -1,0 +1,61 @@
+<div class="product">
+  <div class="product_form">
+    <div class="product_form-header">
+      <h2>Formulario de registro</h2>
+    </div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="productForm">
+      <div class="product_container-form">
+        <div class="product_column">
+          <label>ID</label><br>
+          <input
+            type="text"
+            formControlName="id"
+            [class.error-input]="productForm.get('id')?.invalid && (productForm.get('id')?.dirty || productForm.get('id')?.touched)"
+          ><br>
+          <app-control-messages [control]="productForm.get('id')"></app-control-messages><br>
+
+          <label>Descripción</label><br>
+          <input
+            type="text"
+            formControlName="description"
+          ><br>
+          <app-control-messages [control]="productForm.get('description')"></app-control-messages><br>
+
+          <label>Fecha de liberación</label><br>
+          <input
+            type="date"
+            formControlName="date_release"
+            [min]="minDate"
+          ><br>
+          <app-control-messages [control]="productForm.get('date_release')"></app-control-messages><br>
+        </div>
+
+        <div class="product_column">
+          <label>Nombre</label><br>
+          <input
+            type="text"
+            formControlName="name"
+          ><br>
+          <app-control-messages [control]="productForm.get('name')"></app-control-messages><br>
+
+          <label>Logo</label><br>
+          <input
+            type="text"
+            formControlName="logo"
+          ><br>
+          <app-control-messages [control]="productForm.get('logo')"></app-control-messages><br>
+
+          <label>Fecha de revisión</label><br>
+          <input
+            type="date"
+            formControlName="date_revision"
+          >
+        </div>
+      </div>
+      <div class="product_actions">
+        <button class="secondary_btn" (click)="resetForm($event)">Reiniciar</button>
+        <button class="principal_btn" [disabled]="productForm.invalid" [class.disabled]="productForm.invalid" type="submit">Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>
